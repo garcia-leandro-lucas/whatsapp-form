@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Whatsapp</title>
+    <link rel="stylesheet" href="css/source/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="form whatsapp-form" action="" id="whatsapp-form" method="post">
+                <fieldset class="fieldset questionnaire">
+                    <div class="field name required">
+                        <div class="control">
+                            <input placeholder="Name" name="name" id="whatsappName" title="Name" value=""
+                                class="input-text whatsapp-name" type="text" required="" maxlength="30" minlength="2" autofocus>
+                        </div>
+                    </div>
+                    <div class="field lastname required">
+                        <div class="control">
+                            <input placeholder="Last Name" name="lastname" id="whatsappLastname"
+                                title="Last Name" value="" class="input-text whatsapp-last-name" type="text"
+                                required="" maxlength="30" minlength="2" autofocus>
+                        </div>
+                    </div>
+                    <div class="field whatsapp required">
+                        <!-- Inicio: Bloque select Flag estático -->
+                        <div class="selectbox">
+                            <div class="opciones" id="opciones">
+                                <div class="contenido-opcion">
+                                    <span class="img-flag-argentina"></span>
+                                    <div class="textos">
+                                        <p class="descripcion">+54 9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin: Bloque select Flag estático -->
+                        <div class="control">
+                            <input placeholder="Phone Number" name="phone_number" id="whatsappNumber"
+                                title="Phone Number" value="" class="input-text whatsapp-number" type="number"
+                                inputmode="number" required="" maxlength="20" minlength="7" autofocus>
+                        </div>
+                    </div>
+                    <div class="field action">
+                        <button type="button" title="Send" class="action submit" id="dataValidation"></button>
+                    </div>
+                </fieldset>
+        
+                <div class="content-process-and-messages">
+                    <div class="progress">
+                        <span class="counter-whatsapp-form"></span>
+                    </div>
+                    <div class="messages-valid">
+                    </div>
+                </div>
+                <div class="messages-whatsapp-form-loading">
+                </div>
+                <div class="messages-whatsapp-form">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script: Funcionalidad del formulario -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
