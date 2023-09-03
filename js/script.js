@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(() => {
-
+    
     /* Inicio: Acá se declaran las CONSTANTES y las variables */
     const WHATSAPP_CARACTERES_MAX = 8;
     const NAME_AND_LASTNAME_CARACTERES_MAX = 3;
@@ -32,6 +32,8 @@ $(document).ready(() => {
     let input = $('.input-text');
     let messagesLoading = $('.messages-whatsapp-form-loading');
     /* Fin: Acá se declaran las CONSTANTES y las variables */
+
+    
 
     /* Inicio: Funciones */
     /**
@@ -79,32 +81,52 @@ $(document).ready(() => {
      * @param message the message to be display
      * @param error if it is an error message or not
      */
-    /* let showMessage = (message,error) => {
-        if (!message.length) {
-            return;
+    let showMessageError = (processCounter) => {
+        
+        let messageNameError = "<p>Por favor, ingresar un nombre con más de 3 caracteres.</p>";
+        let messageLastNameError = "<p>Por favor, ingresar un apellido con más de 3 caracteres.</p>";
+        let messagePhoneError = "<p>Por favor, ingresar un número valido. <br />(Un número valido corresponde a un max de 9 caracteres.).</p>";
+        
+        switch (processCounter) {
+            case 1:
+                $(messages).show();
+                $(messages).append( $(messageNameError) );
+                setTimeout(function() {
+                    $(messages).hide();
+                    $(messages).empty();
+                }, MAX_MESSAGE);
+            break;
+
+            case 2:
+                $(messages).show();
+                $(messages).append($(messageLastNameError) );
+                setTimeout(function() {
+                    $(messages).hide();
+                    $(messages).empty();
+                }, MAX_MESSAGE);
+            break;
+
+            case 3:
+                $(messages).show();
+                $(messages).append( $(messagePhoneError) );
+                setTimeout(function() {
+                    $(messages).hide();
+                    $(messages).empty();
+                }, MAX_MESSAGE);
+            break;
+            default:
+            break;
         }
 
-        let styleBackground = error ? '#fbcbcb' : '#d0fbcb';
-        let styleColor = error ? '#bb0000' : '#025614';
-
-        $(messages)
-            .addClass('block')
-            .css('text-align','center')
-            .html(
-                $("<strong>")
-                    .text(message)
-                    .css('background',styleBackground)
-                    .css('color',styleColor)
-            );
-    } */
+    }
     /* Fin: Funciones */
 
     counter();
 
     let callback = function (e) {
-        event.preventDefault();
-        event.stopPropagation()
-        event.stopImmediatePropagation();
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
 
         switch (processCounter) {
             case 1:
@@ -115,6 +137,7 @@ $(document).ready(() => {
                     counter();
                 } else {
                     hasClassError($(inputName));
+                    showMessageError(processCounter);
                 }
                 break;
 
@@ -126,42 +149,30 @@ $(document).ready(() => {
                     counter();
                 } else {
                     hasClassError($(inputLastName));
+                    showMessageError(processCounter);
                 }
                 break;
 
             case 3:
                 if (isValidInput(inputWhatsappNumber, WHATSAPP_CARACTERES_MAX, REG_EXP_NUMBER) && !(isNaN(inputWhatsappNumber.val()))) {
-
-                    /*  let url = window.BASE_URL + 'improntus_whatsappform/contact/create'; */
-                    /* 
-                                            $.ajax({
-                                                url: url,
-                                                type: "POST",
-                                                data: $('#whatsapp-form').serialize(),
-                                                success: function(response) {
-                                                    console.log(response); */
-
-                    /* if (response.ok) { */
                     $(fieldsetQuestionnaire).hide();
                     $(divCounter).hide();
+                    $(messages).append("<p class='success'>Muchas gracias por registrarte.</p>");
+                    $(messages).show();
                     $(messagesLoading).append(`<div class="image-loading"></div>`);
 
                     setTimeout(function () {
                         $(messagesLoading).hide();
+                        $(messages).hide();
                     }, MAX_LOADING);
 
                     setTimeout(function () {
                         location.reload();
                     }, MAX_RELOAD_TIME);
-                    /*  } */
 
-                    /* setTimeout(function () {
-                        showMessage(response.message,!response.ok);
-                    }, MAX_MESSAGE); */
-                    /*      }
-                     }); */
                 } else {
                     hasClassError($(inputWhatsappNumber));
+                    showMessageError(processCounter);
                 }
                 break;
 

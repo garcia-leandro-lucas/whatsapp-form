@@ -9,25 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <form class="form whatsapp-form" action="" id="whatsapp-form" method="post">
+            <form class="form whatsapp-form" action="" id="whatsapp-form" method="post" data-aos="fade-up" data-aos-duration="2000">
+                <div class="content-title">
+                    <h3 class="title">Formulario interactivo de registro.</h3>
+                </div>
                 <fieldset class="fieldset questionnaire">
                     <div class="field name required">
                         <div class="control">
                             <input placeholder="Name" name="name" id="whatsappName" title="Name" value=""
-                                class="input-text whatsapp-name" type="text" required="" maxlength="30" minlength="2" autofocus>
+                                class="input-text whatsapp-name" type="text" required="" maxlength="30" minlength="2"
+                                autofocus>
                         </div>
                     </div>
                     <div class="field lastname required">
                         <div class="control">
-                            <input placeholder="Last Name" name="lastname" id="whatsappLastname"
-                                title="Last Name" value="" class="input-text whatsapp-last-name" type="text"
-                                required="" maxlength="30" minlength="2" autofocus>
+                            <input placeholder="Last Name" name="lastname" id="whatsappLastname" title="Last Name"
+                                value="" class="input-text whatsapp-last-name" type="text" required="" maxlength="30"
+                                minlength="2" autofocus>
                         </div>
                     </div>
                     <div class="field whatsapp required">
@@ -53,7 +59,7 @@
                         <button type="button" title="Send" class="action submit" id="dataValidation"></button>
                     </div>
                 </fieldset>
-        
+
                 <div class="content-process-and-messages">
                     <div class="progress">
                         <span class="counter-whatsapp-form"></span>
@@ -71,6 +77,9 @@
 
     <!-- Script: Funcionalidad del formulario -->
     <script src="js/script.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

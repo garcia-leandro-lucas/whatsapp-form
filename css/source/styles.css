@@ -2,6 +2,16 @@
 
     font-family: 'Roboto', sans-serif;
 
+    /* colours */
+    --color_white: #ffffff;
+    --color_white_1: #e9edef;
+    --color_white_2: #dbdbdb;
+    --color_green: #202c33;
+    --color_green_1: #005c4b;
+    --color_background: #0b141a;
+    --color_black: #000000;
+    --color_red: #a31407;
+
     --icon-user: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjUuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDcyIDcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3MiA3MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMxRDFEMUI7fQo8L3N0eWxlPgo8Zz4KCTxwYXRoIGQ9Ik0zNiwwLjNjOS42LDAsMTcuMyw3LjgsMTcuMywxNy4zQzUzLjMsMjcuMiw0NS41LDM1LDM2LDM1Yy05LjUsMC0xNy4zLTcuOC0xNy4zLTE3LjRDMTguNyw4LDI2LjQsMC4zLDM2LDAuM3ogTTM2LDMwCgkJYzYuOCwwLDEyLjQtNS41LDEyLjQtMTIuM2MwLTYuOC01LjYtMTIuNC0xMi40LTEyLjRjLTYuOCwwLTEyLjQsNS42LTEyLjQsMTIuNEMyMy42LDI0LjQsMjkuMSwzMCwzNiwzMHoiLz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMi4yLDQ1LjFjMTEuMy0xLjcsMjIuOCw0LjMsMjguMSwxNC42YzEuOSwzLjgsMi45LDcuNywzLDEyaDVjMCwwLDAsMCwwLTAuMWMwLTEtMC4xLTIuMS0wLjItMy4xCgkJQzY2LjIsNTIuMyw1Mi40LDQwLDM2LjEsMzkuOWMtMTcuNi0wLjEtMzIsMTQuMi0zMi4zLDMxLjhoNWMwLjEtMS40LDAuMS0yLjcsMC4zLTQuMUMxMS4xLDU1LjksMjAuMyw0Ni45LDMyLjIsNDUuMXoiLz4KPC9nPgo8L3N2Zz4K');
 
     --icon-whatsapp: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjUuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDcyIDcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3MiA3MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMxRDFEMUI7fQo8L3N0eWxlPgo8Zz4KCTxwYXRoIGQ9Ik0wLjQsNzEuN2MwLjgtMi44LDEuNS01LjQsMi4yLTguMWMwLjktMy4yLDEuOC02LjQsMi42LTkuN2MwLjEtMC4zLDAtMC44LTAuMS0xLjFjLTcuMy0xMy40LTUuNS0yOS4zLDQuNi00MC43CgkJQzE1LjgsNS4yLDIzLjYsMS4zLDMyLjksMC40QzQ4LjUtMSw2Mi42LDcuNiw2OC44LDIyYzUuOSwxMy43LDIuMSwzMC40LTkuMiw0MC4yYy03LDYuMS0xNSw5LjEtMjQuMyw4LjljLTUuNS0wLjEtMTAuOC0xLjUtMTUuNy00CgkJYy0wLjMtMC4yLTAuNy0wLjItMS0wLjFDMTIuOCw2OC41LDcsNzAsMS4yLDcxLjVDMSw3MS42LDAuOCw3MS42LDAuNCw3MS43eiBNOC45LDYzLjNjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjEKCQljMy4yLTAuOCw2LjQtMS43LDkuNi0yLjVjMC43LTAuMiwxLjMtMC4xLDEuOSwwLjNjOC42LDUsMTcuNyw1LjcsMjYuOCwxLjhjMTIuNy01LjUsMTkuNi0xOC40LDE3LjMtMzIuMgoJCWMtMi4yLTEzLjMtMTQtMjMuOC0yNy41LTI0LjNDMzAuMSw2LDIzLjQsOC4xLDE3LjYsMTIuOEMxMSwxOC4zLDcuMywyNS40LDYuOCwzNEM2LjQsNDAuNCw4LDQ2LjQsMTEuNSw1MS44CgkJYzAuMywwLjUsMC40LDAuOSwwLjIsMS40QzEwLjgsNTYuNSw5LjksNTkuOSw4LjksNjMuM3oiLz4KCTxwYXRoIGQ9Ik0yNC42LDE5LjRjMS42LTAuNCwyLjMsMC41LDIuOSwxLjljMC44LDIuMSwxLjcsNC4xLDIuNSw2LjFjMC4zLDAuNywwLjMsMS4zLTAuMiwyYy0wLjcsMS0xLjQsMS45LTIuMiwyLjgKCQljLTAuNSwwLjYtMC41LDEuMS0wLjEsMS44YzIuOSw0LjksNi45LDguNCwxMi4yLDEwLjVjMC43LDAuMywxLjMsMC4yLDEuOC0wLjRjMC45LTEuMSwxLjgtMi4yLDIuNy0zLjNjMC41LTAuNywxLjEtMC45LDEuOC0wLjYKCQljMi41LDEuMiw1LjEsMi40LDcuNiwzLjZjMC4zLDAuMSwwLjUsMC42LDAuNSwwLjljMC4xLDIuNi0wLjcsNC44LTMsNi40Yy0yLjksMS45LTUuOSwyLjEtOS4xLDEuMmMtOC4xLTIuMi0xNC4yLTcuMi0xOS4xLTEzLjgKCQljLTEuOC0yLjQtMy41LTQuOC00LjItNy43Yy0wLjktMy41LTAuNC02LjgsMi4xLTkuNkMyMS43LDE5LjgsMjIuOSwxOS4xLDI0LjYsMTkuNHoiLz4KPC9nPgo8L3N2Zz4K');
@@ -74,8 +84,11 @@
         -webkit-transform: translateX(5px);
     }
 }
-
 /* Fin: keyframes de animación CSS3 */
+
+body {
+    background-color: var(--color_background);
+}
 
 .container .row {
     position: fixed;
@@ -86,7 +99,18 @@
     align-items: center;
     width: 100%;
     height: -webkit-fill-available;
-    background-color: #e6e6fa;
+}
+
+.container .row::after {
+    content: "";
+    background-image: url('../../src/assets/images/bg-chat-tile-dark.png');
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .image-loading {
@@ -130,7 +154,7 @@
     -webkit-animation: 1s rebote 1;
 
     &::placeholder {
-        color: #a31407;
+        color: var(--color_red);
         font-weight: 500;
     }
 }
@@ -138,7 +162,83 @@
 .form.whatsapp-form {
     margin: auto;
     padding-top: 0;
-    padding-bottom: 1em
+    padding-bottom: 1em;
+    position: relative;
+    width: 100%;
+    max-width: max-content;
+}
+
+.form.whatsapp-form .content-title {
+    position: relative;
+}
+
+.form.whatsapp-form .title {
+    text-align: center;
+    margin: 10px auto 50px;
+    background-color: var(--color_green);
+    color: var(--color_white_1);
+    padding: 10px;
+    border-radius: 7.5px;
+}
+
+.form.whatsapp-form .counter-whatsapp-form {
+    color: var(--color_white_1);
+}
+
+.form.whatsapp-form .messages-whatsapp-form p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_green_1);
+    color: var(--color_white_1);
+    padding: 10px;
+    border-radius: 7.5px;
+    font-size: 10px;
+}
+
+.form.whatsapp-form .messages-whatsapp-form p::before {
+    content: "";
+    background-image: url('../../src/assets/images/atencion.png');
+    background-repeat: no-repeat;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size: 20px;
+}
+
+.form.whatsapp-form .messages-whatsapp-form p.success {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color_green_1);
+    color: var(--color_white_1);
+    padding: 10px;
+    border-radius: 7.5px;
+    font-size: 12px;
+}
+
+.form.whatsapp-form .messages-whatsapp-form p.success::before {
+    content: "";
+    background-image: url('../../src/assets/images/fiesta.png');
+    background-repeat: no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px;
+}
+
+.form.whatsapp-form .title::before {
+    content: "";
+    background-image: url('../../src/assets/images/play-solid.svg');
+    background-repeat: no-repeat;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-size: 15px;
+    position: absolute;
+    left: -2px;
+    top: -11.4px;
+    transform: rotate(-31deg);
 }
 
 .whatsapp-form__message {
@@ -149,14 +249,15 @@
 .form.whatsapp-form .fieldset.questionnaire {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
+    background-color: var(--color_white);
+    border: 1px solid var(--color_white_2);
     padding: 0;
-    border-radius: 27.5px;
+    border-radius: 4px;
     margin: 0;
     padding: 10px 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    height: 20px;
 }
 
 .form.whatsapp-form .fieldset.questionnaire:hover {
@@ -170,11 +271,16 @@
 
 .form.whatsapp-form .fieldset.questionnaire .field .control {
     display: flex;
+    align-items: center;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field .control .input-text {
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: none;
+}
+
+.form.whatsapp-form .field.whatsapp.required.block .input-text.whatsapp-number {
+    width: 154px;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field .control .input-text:focus-visible {
@@ -222,12 +328,16 @@
         background: var(--icon-user);
         background-repeat: no-repeat;
         background-position: center;
-        width: 22px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        display: block;
     }
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block {
     display: flex;
+    align-items: center;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block::before {
@@ -235,7 +345,10 @@
     background: var(--icon-whatsapp);
     background-repeat: no-repeat;
     background-position: center;
-    width: 22px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    display: block;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block .control::before {
@@ -250,32 +363,34 @@
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block .selectbox::before {
     content: '';
-    border-left: 1px solid #dbdbdb;
+    border-left: 1px solid var(--color_white_2);
     height: 30px;
     margin: 0px 5px;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block .selectbox .opciones {
-    width: 60px;
-    color: #000000;
+    color: var(--color_black);
     text-decoration: blink;
     font-size: 14px;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block .selectbox .opciones .contenido-opcion {
     display: flex;
+    align-items: center;
+    height: 20px;
 }
 
 .form.whatsapp-form .fieldset.questionnaire .field.whatsapp.required.block .selectbox .opciones .img-flag-argentina::before {
     content: '';
-    background: var(----bandera-argentina);
+    background: var(--bandera-argentina);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
     width: 20px;
-    padding: 10px;
+    height: 20px;
+    background-size: 20px;
+    display: block;
+    padding: 5px;
 }
-
 /* Fin: estilos para el select Flags estático */
 
 .form.whatsapp-form .progress {
@@ -286,10 +401,24 @@
 }
 
 .form.whatsapp-form .messages-whatsapp-form {
-    display: none;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 100%;
 }
 
 .form.whatsapp-form .messages-whatsapp-form.block {
     display: block;
     padding: 30px 0px 50px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
